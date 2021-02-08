@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="贪吃蛇.cpp">
+    <ClCompile Include="GluSnake.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="GluSnake.cpp">
+    <ClCompile Include="SnakeGame.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -31,7 +31,21 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="贪吃蛇.rc">
+    <Media Include="..\..\..\..\..\桌面资料库\程序\完成\贪吃蛇\音效\01.wav">
+      <Filter>资源文件</Filter>
+    </Media>
+    <Media Include="..\..\..\..\..\桌面资料库\程序\完成\贪吃蛇\音效\02.wav">
+      <Filter>资源文件</Filter>
+    </Media>
+    <Media Include="..\..\..\..\..\桌面资料库\程序\完成\贪吃蛇\音效\03.wav">
+      <Filter>资源文件</Filter>
+    </Media>
+    <Media Include="..\..\..\..\..\桌面资料库\程序\完成\贪吃蛇\音效\04.wav">
+      <Filter>资源文件</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SnakeGame.rc">
       <Filter>资源文件</Filter>
     </ResourceCompile>
   </ItemGroup>

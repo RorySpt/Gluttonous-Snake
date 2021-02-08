@@ -2,6 +2,7 @@
 // 最后修改：2020-7-24
 // 重新排版：2020-10-24
 #include "GluSnake.h"
+#include "io.h"
 int main()
 {
 
@@ -50,7 +51,20 @@ int main()
         GluSnake->drawFood(((drawcout % 10) == 0));
         GluSnake->drawtext({ 0,0 });
         FlushBatchDraw();
-
+        static SHORT bPicture = 0;
+        static int png_count = 0;
+        if (!bPicture&&(bPicture = ((GetAsyncKeyState(0x7A))) ? 1 : 0)) {
+            wchar_t buf[100];
+            _wfinddata_t file;
+            do{
+                swprintf_s(buf, L"截图%d.png", png_count++);
+            } while (_wfindfirst(buf, &file)!=-1);
+            
+            saveimage(buf);
+        }
+        else {
+            bPicture = ((GetAsyncKeyState(0x7A))) ? 1 : 0;
+        }
         //帧控制
         pFraCtrl->timeController(GluSnake->max_fps);
     }

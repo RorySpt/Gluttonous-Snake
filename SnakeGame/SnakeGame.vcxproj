@@ -140,14 +140,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GluSnake.cpp" />
-    <ClCompile Include="贪吃蛇.cpp" />
+    <ClCompile Include="SnakeGame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GluSnake.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="贪吃蛇.rc" />
+    <Media Include="..\..\..\..\..\桌面资料库\程序\完成\贪吃蛇\音效\01.wav" />
+    <Media Include="..\..\..\..\..\桌面资料库\程序\完成\贪吃蛇\音效\02.wav" />
+    <Media Include="..\..\..\..\..\桌面资料库\程序\完成\贪吃蛇\音效\03.wav" />
+    <Media Include="..\..\..\..\..\桌面资料库\程序\完成\贪吃蛇\音效\04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SnakeGame.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

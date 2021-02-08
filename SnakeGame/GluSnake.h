@@ -105,15 +105,15 @@ public:
     {
         switch (cmd)
         {
-        case 0:   PlaySound(_T("音效\\04.wav"), NULL, SND_ASYNC | SND_NODEFAULT); break;
-        case 1:   PlaySound(_T("音效\\01.wav"), NULL, SND_ASYNC | SND_NODEFAULT); break;
+        case 0:   PlaySound(MAKEINTRESOURCE(102), NULL, SND_ASYNC | SND_NODEFAULT | SND_RESOURCE); break;
+        case 1:   PlaySound(MAKEINTRESOURCE(101), NULL, SND_ASYNC | SND_NODEFAULT | SND_RESOURCE); break;
         }
     }
     void playmusicHit(int cmd)
     {
         switch (cmd)
         {
-        case 0:   PlaySound(_T("音效\\03.wav"), NULL, SND_ASYNC | SND_NODEFAULT); break;
+        case 0:   PlaySound(MAKEINTRESOURCE(103), NULL, SND_ASYNC | SND_NODEFAULT | SND_RESOURCE); break;
 
         }
     }
@@ -257,7 +257,7 @@ public:
         key[9].keyState = KEY_DOWN(0xDB);//[
         key[10].keyState = KEY_DOWN(0xDD);//]
         key[11].keyState = KEY_DOWN(0x20);//space
-        key[12].keyState = KEY_DOWN(0xBF);//?
+        key[12].keyState = KEY_DOWN(0x70);//F11
         key[13].keyState = KEY_DOWN(0x30);//)
         key[14].keyState = KEY_DOWN(0x39);//(
         for (int i = 0; i < keySum; i++)
@@ -494,41 +494,41 @@ public:
         int y = site.y;
         int hang = 0;
         WCHAR buf[100] = { 0 };
-        outtextxy(_Site(x), _Site(y + hang), _T("贪吃蛇：Snake0"));
+        //outtextxy(_Site(x), _Site(y + hang), _T("贪吃蛇：Snake0"));
 
-        hang = 1;
+        hang = 0;
         outtextxy(_Site(x), _Site(y + hang), _T("生命状态："));
         if (SnakeCondition == Snake_condition::survive) outtextxy(_Site(x + 5), _Site(y + hang), _T("存活"));
         if (SnakeCondition == Snake_condition::die) outtextxy(_Site(x + 5), _Site(y + hang), _T("濒死"));
         if (SnakeCondition == Snake_condition::ate) outtextxy(_Site(x + 5), _Site(y + hang), _T("吃了"));
 
 
-        hang = 2;
+        hang ++;
         outtextxy(_Site(x), _Site(y + hang), _T("等级："));
         outtextxy(_Site(x + 3), _Site(y + hang), numtostr(grade, buf));
 
-        hang = 3;
+        hang ++;
         outtextxy(_Site(x), _Site(y + hang), _T("分数："));
         outtextxy(_Site(x + 3), _Site(y + hang), numtostr(score, buf));
-        hang = 4;
+        hang ++;
         outtextxy(_Site(x), _Site(y + hang), _T("速度："));
         outtextxy(_Site(x + 3), _Site(y + hang), numtostr(Speed, buf));
-        hang = 5;
+        hang ++;
         outtextxy(_Site(x), _Site(y + hang), _T("长度："));
         outtextxy(_Site(x + 3), _Site(y + hang), numtostr(len, buf));
-        hang = 6;
+        hang ++;
         outtextxy(_Site(x), _Site(y + hang), _T("食物数量："));
         outtextxy(_Site(x + 5), _Site(y + hang), numtostr(foodSum, buf));
-        hang = 7;
+        hang ++;
         outtextxy(_Site(x), _Site(y + hang), _T("蛇体模式："));
         if (snakeBodyMod == 0) outtextxy(_Site(x + 5), _Site(y + hang), _T("正常"));
         if (snakeBodyMod == 1) outtextxy(_Site(x + 5), _Site(y + hang), _T("穿墙"));
         if (snakeBodyMod == 2) outtextxy(_Site(x + 5), _Site(y + hang), _T("无敌"));
-        hang = 8;
-        outtextxy(_Site(x), _Site(y + hang), _T("FPS:"));
-        outtextxy(_Site(x + 2), _Site(y + hang), numtostr(Get_Fps(), buf));
-        hang = 9;
-        outtextxy(_Site(x), _Site(y + hang), _T("说明：（?/）"));
+        hang ++;
+        outtextxy(_Site(x), _Site(y + hang), _T("FPS："));
+        outtextxy((int)_Site(x + 2.5), _Site(y + hang), numtostr(Get_Fps(), buf));
+        hang ++;
+        outtextxy(_Site(x), _Site(y + hang), _T("说明：（F1）"));
         if (help_sign == 1)
         {
             help(10, 2);
